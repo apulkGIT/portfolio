@@ -1,0 +1,14 @@
+body {
+   perspective: 1000px;
+}
+body div {
+   transform-style: preserve-3d;
+   transition: transform 2s;
+   transform-origin: top center;
+}
+.flip-text1 {
+   transform: rotateX(90deg);        
+}
+.flip-text2 {
+   transform: rotateX(0deg);
+}
