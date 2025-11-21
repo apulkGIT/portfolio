@@ -7,10 +7,11 @@ body div {
    transform-origin: top center;
 }
 .flip-text1 {
-   transform: rotateX(270deg);        
+   transform: rotateX(85deg);        
 }
 .flip-text2 {
    transform: rotateX(0deg);
 }
+
 
 
