@@ -2,6 +2,7 @@ body {
    perspective: 1000px;
 }
 body div {
+   position: relative;
    transform-style: preserve-3d;
    transition: transform 2s;
    transform-origin: top center;
