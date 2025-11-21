@@ -2,16 +2,14 @@ body {
    perspective: 1000px;
 }
 body div {
-   position: relative;
    transform-style: preserve-3d;
    transition: transform 2s;
-   top: 0px;
    transform-origin: top center;
 }
 .flip-text1 {
-   transform: rotateX(90deg);        
+   transform: rotateX(-90deg);        
 }
 .flip-text2 {
    transform: rotateX(0deg);
-
 }
+
