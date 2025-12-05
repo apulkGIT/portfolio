@@ -6,19 +6,30 @@ body div {
    transform-origin: top center;
 }
 .flip-text1 {
-   transform: rotateX(90deg);
+   transform: rotateX(90deg);        
 }
 .flip-text2 {
    transform: rotateX(0deg);
 }
+p {
+  font-size: 2em;
+  width: 90%;
+  margin: .67em;
+}
+.portfolioname {
+   position: relative;
+   left: 5%;
+   top:20px;
+   width: 590px;
+   animation: run 5s linear infinite;
+   animation-direction: alternate;
+}
 
-
-
-
-
-
-
-
-
-
-
+@keyframes run {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: calc(100% - 590px);
+  }
+}
