@@ -1,35 +1,47 @@
 body {
-   perspective: 1000px;
+   background-attachment: fixed;
+   background-image: repeating-linear-gradient(to bottom, blue, white);
 }
-body div {
-   transition: transform 2s;
-   transform-origin: top center;
+nav {
+  position: relative;
+  width: 540px;
+  left: calc(100vw - 580px);
+  top: 20px;
+  opacity: 1;
 }
-.flip-text1 {
-   transform: rotateX(90deg);        
+.navul {
+  list-style-type: none;
 }
-.flip-text2 {
-   transform: rotateX(0deg);
+.navitem {
+  white-space: nowrap;
+  display: inline-block;
+}
+.navitem:not(.lastnavitem) {
+  margin-right: 10px;
+}
+.navlink {
+  font-size: 10px;
+  color: grey;
+  text-decoration: none;
+}
+.navlink:hover {
+  color: white;
+  text-decoration: none;
+}
+span {
+  font-size: 25px;
+}
+.content {
+  position: relative;
+  width: 80%;
+  left: 10%;
+  top:60px;
 }
 p {
   font-size: 2em;
-  width: 90%;
+  width: 80%;
   margin: .67em;
 }
-.portfolioname {
-   position: relative;
-   left: 5%;
-   top:20px;
-   width: 590px;
-   animation: run 5s linear infinite;
-   animation-direction: alternate;
-}
-
-@keyframes run {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: calc(100% - 590px);
-  }
+label {
+   font-size: 2em;
 }

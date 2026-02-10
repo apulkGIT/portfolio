@@ -2,59 +2,54 @@
 <html lang="zxx">
 <head>
     <meta charset="UTF-8">
-    <title>Asemointi - Float</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <style>
-      body {
-        background-attachment: fixed;
-        background-image: repeating-linear-gradient(to bottom, red, yellow);
-      }
-      h1 {
-        width: 90%;
-      }
-    </style>
+    <title>Antti Pulkkisen portfolio</title>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
 <body>
-   <div class="portfolioname">
-     <h1>Antti Pulkkisen portfolio sivu</h1>
-   </div>
-   <nav style="position: relative; width: 90%; left: 5%; top: 40px; border-radius: 4px;" class="navbar navbar-expand-sm bg-body-tertiary">
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./index.html"><h1>Aloitus</h1></a>
+   <nav>
+    <div class="navdiv">
+      <ul>
+        <li class="navitem">
+          <a class="navlink" href="./mina.html"><span>Minä</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./minusta.html"><h1>Minusta</h1></a>
+        <li class="navitem">
+          <a class="navlink" href="./koulutus.html"><span>Koulutus</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./koulutus.html"><h1>Koulutus</h1></a>
+        <li class="navitem">
+          <a class="navlink" href="./projektit.html"><span>Projektit</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./projektit.html"><h1>Projektit</h1></a>
+        <li class="navitem">
+          <a class="navlink" href="./tyo.html"><span>Työ</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./tyo.html"><h1>Työ</h1></a>
+        <li class="navitem lastnavitem">
+          <a class="navlink" href="./contact.html"><span>Ota yhteyttä</span></a>
         </li>
       </ul>
     </div>
    </nav>
-   <div style="position: relative; width: 90%; left: 5%; top:60px;">
-     <div id="data" class="flip-text1">
-     <caption><p>Koulutus:</p></caption>
-     <ul>
-        <li><p>Taitotalo, 2025 -></p>
-            <p>ohjelmistokehittäjän perustutkinto</p></li>
-        <li><p>Diplomi-insinööri, Teknillinen korkeakoulu 1997 - 2009, </p>
-            <p>Sähkötekniikan osasto: 1997-2009, opintoviikkoja 197</p>
-            <p>(Suunta: Elektroniikka; Pääaine: Elektroniikka ja mittaustekniikka; Sivuaine: Televiestintäjärjestelmät; DI-työ: Sähkömagneettinen yhteensopivuus ja monisirumoduulit)</p>
-         </li>
-         <li><p>Ylioppilas, Lahden Lyseon Lukio 1997</p></li>
-     </ul>
+   <div class="content">
+     <h1>Koulutus</h1>
+     <div style="align-items: center; display:flex;">     
+       <p>Opiskelen tällä hetkellä Taitotalossa tieto- ja viestintätekniikan perustutkintoa. Aloitin 2025 lokakuussa.</p>
+       <img src="./taitotalo.jpg"/>
+     </div>
+     <div style="align-items: center; display:flex;">     
+       <img src="./metropolia.jpg"/>
+       <p>Olen opiskellut yksittäisiä kursseja Metropoliassa aikuisopiskelijana vuosina 2024-2025.</p>
+     </div>
+     <div style="align-items: center; display:flex;">     
+       <p>Olen opiskellut yksittäisiä kursseja LUT:ssa aikuisopiskelijana vuosina 2023-2024.</p>
+       <img src="./LUT.jpg"/>
+     </div>
      <br>
-     <caption><p>Kurssit:</p></caption>
+     <img style="float:left;" src="./tkk.jpg"/>
+     <p>Olen aiemmalta koulutukseltani DI Teknillisestä korkeakoulusta. Opiskelin siellä vuosina 1997-2009 sähkötekniikan osastolla. Pääaineena oli eletkroniikka ja mittaustekniikka. Sivuaine oli televiestintäjärjestelmät. Diplomityö oli sähkömagneettinen yhteensopivuus ja monisirumoduulit.</p>
+     <br>
+     <div style="align-items: center; display:flex;">     
+       <p>Ylioppilas, Lahden Lyseon Lukio 1997</p></li>
+       <img src="./ylioppilas.jpg"/>
+     </div>
+     <h1>Kurssit</h1>
      <ul>
        <li><p>udemy.com:</p></li> 
        <ul> 
@@ -123,15 +118,5 @@
       </ul>
     </div>
    </div>
-   <script>
-    let switch_ = 0;
-    setInterval(function () {
-      let d = document.getElementById("data")
-      if (switch_==0) {
-        d.className = "flip-text2";
-        switch_ = 1;
-      }
-    }, 500);
-    </script>
 </body>
 </html>

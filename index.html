@@ -2,62 +2,33 @@
 <html lang="zxx">
 <head>
     <meta charset="UTF-8">
-    <title>Asemointi - Float</title>
+    <title>Antti Pulkkisen portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="./styles.css">
     <style>
-      body {
-        background-attachment: fixed;
-        background-image: repeating-linear-gradient(to bottom, red, yellow);
-      }
-      h1 {
-        width: 90%;
+      .load {
+        position: absolute;
+        left: calc(50vw - 30px);
+        top: calc(50vh - 8px);
       }
     </style>
 </head>
 <body>
-   <div class="portfolioname">
-     <h1>Antti Pulkkisen portfolio sivu</h1>
-   </div>
-   <nav style="position: relative; width: 90%; left: 5%; top: 40px; border-radius: 4px;" class="navbar navbar-expand-sm bg-body-tertiary">
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./index.html"><h1>Aloitus</h1></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./minusta.html"><h1>Minusta</h1></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./koulutus.html"><h1>Koulutus</h1></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./projektit.html"><h1>Projektit</h1></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./tyo.html"><h1>Työ</h1></a>
-        </li>
-      </ul>
-    </div>
-   </nav>
-   <div style="position: relative; width: 90%; left: 5%; top:60px;">
-     <div id="data" class="flip-text1">
-       <p>Olet klikkaillut itsesi portfolio sivulleni!</p>
-       <p>Tällä sivustolla on tietoa minusta. Tietoa minusta, koulutuksestani, projekteistani ja työhistoriastani.</p>
-     </div>
+   <div class="load">
+     <h1 id="h1load">Lataa</h1>
    </div>
    <script>
-    let switch_ = 0;
-    setInterval(function () {
-      let d = document.getElementById("data")
-      if (switch_==0) {
-        d.className = "flip-text2";
-        switch_ = 1;
+    let counter = 0;
+    let idoftimer = setInterval(function () {
+      if (counter>=2) {
+        clearTimeout(idoftimer);
+        window.location.pathname = "C:/Users/apulk/OneDrive/Työpöytä/taitotalo/webkehitys/portfolio/mina.html";
       }
+      let d = document.getElementById("h1load")
+      d.innerHTML += '.';
+      counter++;
     }, 500);
     </script>
 </body>
-
 </html>
-
