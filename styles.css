@@ -30,6 +30,7 @@ nav {
 }
 span {
   font-size: 25px;
+  font-family: sans-serif;
 }
 .content {
   position: relative;
@@ -37,10 +38,15 @@ span {
   left: 10%;
   top:60px;
 }
+h1 {
+  font-family: monospace;
+  font-size: 3em;
+}
 p {
   font-size: 2em;
   width: 80%;
   margin: .67em;
+  font-family: math;
 }
 label {
    font-size: 2em;
