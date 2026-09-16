@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 5</title>
+</head>
+<body>
+    <input id="inputArea" type="text" placeholder="Tämä on lause"/>
+    <input id="inputArea2" type="text" placeholder="Anna tähän lause"/>
+    <button id="btn">Laske esiintymät</button>
+    <p id="tulosAlue"></p>
+
+    <script>
+        const tulosAlue = document.getElementById("tulosAlue");
+        const inputArea = document.getElementById("inputArea");
+        const inputArea2 = document.getElementById("inputArea2");
+        const btn = document.getElementById("btn");
+
+        btn.onclick = function () {
+            let count = 0;
+            let start = 0;
+            while (1) {
+                start = inputArea.value.toLowerCase().indexOf(inputArea2.value.toLowerCase(), start)+1;
+                if (start<=0) {
+                    break;
+                }
+                count++;
+            }
+            
+            tulosAlue.innerHTML = "Merkkijonossa on merkkejä "+inputArea2.value+" "+count+" kpl";
+        }
+
+    </script>
+</body>
+</html>

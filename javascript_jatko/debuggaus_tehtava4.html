@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 4</title>
+</head>
+<body>
+    <input id="inputArea" type="text"/>
+    <button id="btn">kerro</button>
+    <p id="tulosAlue"></p>
+
+    <script>
+        const tulosAlue = document.getElementById("tulosAlue");
+        const inputArea = document.getElementById("inputArea");
+        const inputArea2 = document.getElementById("inputArea2");
+        const btn = document.getElementById("btn");
+
+        btn.onclick = function () {
+            tulosAlue.innerHTML = inputArea.value + " kertotaulu: "
+            for (let i=0;i<=10;i++) {
+                tulosAlue.innerHTML += (i*Number(inputArea.value))+", ";
+            }
+        }
+
+    </script>
+</body>
+</html>

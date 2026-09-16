@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 3</title>
+</head>
+<body>
+    <p id="tulosAlue"></p>
+    <input id="inputArea1" type="text"/>
+    <input id="inputArea2" type="text"/>
+    <button id="btn">Summa</button>
+
+    <script>
+        const tulosAlue = document.getElementById("tulosAlue");
+        const inputArea1 = document.getElementById("inputArea1");
+        const inputArea2 = document.getElementById("inputArea2");
+        const btn = document.getElementById("btn");
+
+        btn.onclick = function () {
+            tulosAlue.innerHTML = (Number(inputArea1.value)+Number(inputArea2.value))
+        }
+
+    </script>
+
+</body>
+</html>

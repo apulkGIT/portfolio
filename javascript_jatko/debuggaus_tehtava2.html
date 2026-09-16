@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 2</title>
+</head>
+<body>
+    <p id="tervehdys"></p>
+    <input id="inputti" type="text"/>
+    <button id="buttoni">Nappi</button>
+
+    <script>
+        const teksti = document.getElementById("tervehdys");
+        const inputti = document.getElementById("inputti");
+        const buttoni = document.getElementById("buttoni");
+        buttoni.onclick = function () {
+            teksti.innerHTML = "Hei, sinun nmesi on: "+inputti.value;
+        }
+    </script>
+</body>
+</html>
