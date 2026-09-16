@@ -1,0 +1,7 @@
+2. - Kirjoita muuttujia, jotka ovat helppo ymmärtää nimestä. 
+   - Vältä ylimääräistä tietoa.
+   - Älä kirjoita ylimääräistä tietoa.
+   - Älä kirjoita numeroita vaan kirjoita ne vakioina.
+   - Tee pieniä funktiota.
+
+3. "Noise Words" tarkoittaa, että nimetyssä muuttujassa tai funktiossa on ylimääräistä selostusta, jonka voi jättää tekemättä. Esim. jos luokka on nimetty "UserInfo", sen ymmärtäisi paremmin "User":ina. Noise wordsien käyttö tuo ylimääräistä tietoa, jota tulisi välttää.
