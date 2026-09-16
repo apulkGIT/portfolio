@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Tehtävä 4</title>
+</head>
+<body>
+    <div id="main" style="display: flex; flex-direction: column; background-color: yellow; position: relative; align-items: center; left: calc(50vw - 350px); top: 100px; width: 700px; border: 10px solid yellow; border-radius: 10px;">
+        <h1>Tehtävä 4</h1>
+        <div style="display: flex; flex-direction: row;">
+            <button id="buttoni1">Lisää hedelmä 1 (hinta 2)</button>
+            <button id="buttoni2">Lisää hedelma 2 (hinta 4)</button>
+            <button id="buttoni3">Lisää hedelmä 3 (hinta 1)</button>
+            <button id="buttoniyhteis">Laske hedelmien yhteishinnan</button>
+            <button id="buttonit">Tyhjennä ostoskori</button>
+        </div>
+        <div id="tulos"></div>
+        <div id="tulos2"></div>
+    </div>
+    <script>
+        let hedelmat = []
+        const b1 = document.getElementById("buttoni1");
+        const b2 = document.getElementById("buttoni2");
+        const b3 = document.getElementById("buttoni3");
+        const by = document.getElementById("buttoniyhteis");
+        const bt = document.getElementById("buttonit");
+        const tulos = document.getElementById("tulos");
+        const tulos2 = document.getElementById("tulos2");
+        const m = document.getElementById("main");
+        function deleteindex(n) {
+            let l = m.children[2].children.length;
+            for (let i=n;i<l;i++) {
+                m.children[2].removeChild(m.children[2].children[n]);
+            }
+            console.log(n);
+            console.log(l);
+            for (let i=n+1;i<l;i++) {
+                tulos.innerHTML += `<div style="display: flex; flex-direction: row;"><p>nimi: ${hedelmat[i].nimi}, hinta: ${hedelmat[i].hinta}</p><button data-index="${i-1}" onclick="deleteindex(${i-1})" class="voiei2">Delete</button></div>`;
+            }
+            hedelmat.splice(n,1);
+            console.log(hedelmat);
+        }
+        b1.onclick = function () {
+            hedelmat.push({hinta: 2, nimi: "appelsiini"});
+            tulos.innerHTML += `<div style="display: flex; flex-direction: row;"><p>nimi: appelsiini, hinta: 2</p><button data-index="${hedelmat.length-1}" onclick="deleteindex(${hedelmat.length-1})" class="voiei2">Delete</button></div>`;
+        }
+        b2.onclick = function () {
+            hedelmat.push({hinta: 4, nimi: "kiivi"});
+            tulos.innerHTML += `<div style="display: flex; flex-direction: row;"><p>nimi: kiivi, hinta: 4</p><button data-index="${hedelmat.length-1}" onclick="deleteindex(${hedelmat.length-1})" class="voiei2">Delete</button></div>`;
+        }
+        b3.onclick = function () {
+            hedelmat.push({hinta: 1, nimi: "banaani"});
+            tulos.innerHTML += `<div style="display: flex; flex-direction: row;"><p>nimi: banaani, hinta: 1</p><button data-index="${hedelmat.length-1}" onclick="deleteindex(${hedelmat.length-1})" class="voiei2">Delete</button></div>`;
+        }
+        by.onclick = function () {
+            tulos2.innerHTML = "Hedelmäkorin hinta on "+hedelmat.reduce((h,cur)=>h+cur.hinta,0)+" euro ja siellä on "+hedelmat.length+ " hedelmää";
+        }
+        bt.onclick = function () {
+            hedelmat = [];
+            tulos.innerHTML = "";
+            tulos2.innerHTML = "";
+        }
+        /*document.getElementById("tulos").addEventListener("click", function (event) {
+            if (event.target.classList.contains("voiei2")) {
+                const index = Number(event.target.dataset.index);
+                let l = m.children[2].children.length;
+                for (let i=index;i<l;i++) {
+                    m.children[2].removeChild(m.children[2].children[index]);
+                }
+                for (let i=index+1;i<l;i++) {
+                    tulos.innerHTML += `<div style="display: flex; flex-direction: row;"><p>nimi: ${hedelmat[i].nimi}, hinta: ${hedelmat[i].hinta}</p><button data-index="${i-1}" class="voiei2">Delete</button></div>`;
+                }
+                hedelmat.splice(index,1);
+                console.log(hedelmat);
+            }
+        });*/
+    </script>
+
+</body>
+</html>
