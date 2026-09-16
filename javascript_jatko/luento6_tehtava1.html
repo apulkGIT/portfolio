@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 1 (luento 6)</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+    <div style="position: relative; top: calc(50vh - 100px); left: calc(50vw - 150px); width: 300px; background-color: yellow; display: flex; flex-direction: column; border: 10px solid yellow; border-radius: 10px; align-items: center;">
+        <h1>Tehtävä 1 (luento 6)</h1>
+        <input type="number"/>
+        <p>anna luku</p>
+    </div>
+    <script>
+        const n = document.querySelector("input");
+        const p = document.querySelector("p");
+        n.addEventListener("input", () => {
+            if (n.value=="") {
+                p.innerHTML = "anna luku";
+            } else if (n.value>=-10 && n.value<=10) {
+                p.innerHTML = `ok <span style="color: green;">${n.value}</span>`;
+            } else if (n.value < -10) {
+                p.innerHTML = "liian pieni";
+            } else {
+                p.innerHTML = "liian suuri";
+            }
+        });
+    </script>
+
+</body>
+</html>
