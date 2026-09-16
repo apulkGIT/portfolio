@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 3 (luento 5)</title>
+</head>
+<body>
+    <form>
+        <label for="email">Email</label>
+        <input id="email" type="email" pattern="^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[a-zA-Z.]+$" required/><br>
+        <label for="number">Luottokorttinumero</label>
+        <input id="number" type="number" required/><br>
+        <label for="text">Merkkijono</label>
+        <input id="text" type="text" pattern=".*ae$"/><br>
+        <input type="submit"/>
+    </form>
+    <style>
+        input:user-invalid {
+            background-color: lightpink;
+        }
+        input:user-valid {
+            background-color: palegreen;
+        }
+    </style>
+</body>
+</html>
