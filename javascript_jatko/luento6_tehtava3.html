@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 3 (luento 6)</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+    <div style="display: flex; align-items: center; justify-content: center; height: 100vh;">
+        <div style="background-color: yellow; display: flex; flex-direction: column; border: 10px solid yellow; border-radius: 10px; align-items: center;">
+            <h1>Tehtävä 3 (luento 6)</h1>
+            <p></p>
+            <button>Käynnistä</button>
+        </div>
+    </div>
+    <script>
+        const p = document.querySelector("p");
+        const btn = document.querySelector("button");
+        btn.addEventListener("click", function () {
+            p.innerHTML = "<div>";
+            for (let i=1;i<=10;i++) {
+                p.innerHTML += `<p style="font-size: ${9+i*3}px; color: rgb(${i*20+20},${i*20+20},${i*20+20});">Tässä on luku ${i}</p>`;
+            }
+            p.innerHTML += "</div>";
+        });
+    </script>
+</body>
+</html>
