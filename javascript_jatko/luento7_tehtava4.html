@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 4 (luento 7)</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+    <div style="display: flex; align-items: center; justify-content: center; height: 100vh;">
+        <div style="background-color: yellow; display: flex; flex-direction: column; border: 10px solid yellow; border-radius: 10px; align-items: center;">
+            <h1>Tehtävä 4 (luento 7)</h1>
+            <div>
+                <label>Luku1: </label>
+                <input type="number"/>
+            </div>
+            <div>
+                <label>Luku2: </label>
+                <input type="number"/>
+            </div>
+            <button>Laske</button>
+            <p>Tähän tulee numerot</p>
+        </div>
+    </div>
+    <script>
+        const luku1 = document.querySelectorAll("input")[0];
+        const luku2 = document.querySelectorAll("input")[1];
+        const btn = document.querySelector("button");
+        const p = document.querySelector("p");
+        btn.addEventListener("click", function () {
+            if (luku1.value=="" && luku2.value=="") {
+                p.innerHTML = "Anna luvut";
+            } else if (luku1.value=="") {
+                p.innerHTML = "Anna luku1";
+            } else if (luku2.value=="") {
+                p.innerHTML = "Anna luku1";
+            } else {
+                if (luku1.value<20 || luku1.value>100) {
+                    p.innerHTML = "Luku 1 pitää olla 20 tai suurempi ja 100 tai pienempi";
+                } else if (luku2.value<2 || luku2.value>5) {
+                    p.innerHTML = "Luku 2 pitää olla 2 tai suurempi ja 5 tai pienempi";
+                } else {
+                    let i = 0;
+                    p.innerHTML = "<div>";
+                    let laskuri = 0;
+                    while (i<=Number(luku1.value)) {
+                        if (i>0) {
+                            p.innerHTML +="</span>, ";
+                        }
+                        p.innerHTML += `<span style="color: rgb(${laskuri*8},${0+laskuri*8},${0+laskuri*8});">${i}`;
+                        i += Number(luku2.value);
+                        laskuri++;
+                    }
+                    p.innerHTML += `</span><p>Kirjoitti luvun ${laskuri} kertaa</p></div>`;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
