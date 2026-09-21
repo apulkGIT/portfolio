@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 0 (luento 8)</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+    <div style="display: flex; align-items: center; justify-content: center; height: 100vh;">
+        <div style="background-color: yellow; display: flex; flex-direction: column; border: 10px solid yellow; border-radius: 10px; align-items: center;">
+            <h1>Tehtävä 0 (luento 8)</h1>
+            <form style="display:flex; flex-direction: column;">
+                <label for="malli">Malli</label>
+                <input id="malli" type="text" required/>
+                <label for="vari">Väri</label>
+                <input id="vari" type="color" required/>
+                <label for="paino">Paino</label>
+                <input id="paino" type="text" required/>
+                <label for="omistaja">Omistaja</label>
+                <input id="omistaja" type="text" required/>
+                <button id="tallenna">Tallenna</button>
+            </form>
+            <button id="tyhjenna">Tyhjennä</button>
+            <div id="radiobuttonit"></div>
+            <button style="display:none;" id="tulosta">Tulosta valitun auton tiedot</button>
+            <p></p>
+        </div>
+    </div>
+    <script>
+        const malli = document.getElementById("malli");
+        const vari = document.getElementById("vari");
+        const paino = document.getElementById("paino");
+        const omistaja = document.getElementById("omistaja");
+        const tallenna = document.getElementById("tallenna");
+        const tyhjenna = document.getElementById("tyhjenna");
+        const p = document.querySelector("p");
+        const radiobuttonit = document.getElementById("radiobuttonit");
+        const tulosta = document.getElementById("tulosta");
+
+        let autot = [];
+        let valinta = -1;
+
+        function autoolio(malli,vari,paino,omistaja) {
+            this.malli = malli,
+            this.vari = vari,
+            this.paino = paino,
+            this.omistaja = omistaja,
+            this.autoTiedot = function () { 
+                p.textContent = `${this.omistaja} omistaa auton, jonka väri on ${this.vari} ja paino ${this.paino}. Malli on ${this.malli}.`;
+                console.log(p.textContent);
+            }
+        }
+
+        tallenna.addEventListener("click", function (e) {
+            e.preventDefault();
+            let auto = new autoolio(malli.value, vari.value, paino.value, omistaja.value);
+            autot.push({auto, nimi:`Auto${autot.length+1}`});
+            const label = document.createElement("label");
+            label.textContent = autot[autot.length-1].nimi;
+            const uusiradio = document.createElement("input");
+            uusiradio.type = "radio";
+            uusiradio.name = "autovalinta";
+            uusiradio.innerHTML = autot[autot.length-1].nimi;
+            let index = autot.length-1;
+            uusiradio.onclick = function () {
+                valinta = index;
+            };
+            radiobuttonit.appendChild(uusiradio);
+            radiobuttonit.appendChild(label);
+            tulosta.style.display = "block";
+        });
+
+        tyhjenna.addEventListener("click", function (e) {
+            p.textContent = "";
+            document.querySelector("form").reset();
+        });
+
+        tulosta.addEventListener("click", function (e) {
+            autot[valinta].auto.autoTiedot();
+        });
+
+    </script>
+</body>
+</html>
