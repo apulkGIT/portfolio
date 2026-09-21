@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä 0 (luento 8)</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+    <div style="display: flex; align-items: center; justify-content: center; height: 100vh;">
+        <div style="background-color: yellow; display: flex; flex-direction: column; border: 10px solid yellow; border-radius: 10px; align-items: center;">
+            <h1>Tehtävä 0 (luento 8)</h1>
+            <form>
+                <label for="vari">Väri</label>
+                <input id="vari" type="color" required/>
+                <label for="paino">Paino</label>
+                <input id="paino" type="text" required/>
+                <label for="omistaja">Omistaja</label>
+                <input id="omistaja" type="text" required/>
+                <button id="tulosta">Tulosta</button>
+            </form>
+            <button id="tyhjenna">Tyhjennä</button>
+            <p></p>
+        </div>
+    </div>
+    <script>
+        const vari = document.getElementById("vari");
+        const paino = document.getElementById("paino");
+        const omistaja = document.getElementById("omistaja");
+        const tulosta = document.getElementById("tulosta");
+        const tyhjenna = document.getElementById("tyhjenna");
+        const p = document.querySelector("p");
+        
+        function autoolio(vari,paino,omistaja) {
+            this.vari = vari;
+            this.paino = paino;
+            this.omistaja = omistaja;
+            this.autoTiedot = function () { 
+                p.textContent = `Auton omistaja on ${this.omistaja}. Se painaa ${this.paino} ja väriltään ${this.vari}.`;
+                console.log(p.textContent);
+            }
+        }
+
+        let auto = new autoolio("","","");
+
+        tulosta.addEventListener("click", function (e) {
+            e.preventDefault();
+            auto.vari = vari.value;
+            auto.paino = paino.value;
+            auto.omistaja = omistaja.value;
+            auto.autoTiedot();
+        });
+
+        tyhjenna.addEventListener("click", function (e) {
+            p.textContent = "";
+            vari.value = "";
+            paino.value = "";
+            omistaja.value = "";
+        });
+    </script>
+</body>
+</html>
