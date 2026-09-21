@@ -1,0 +1,37 @@
+<!-- Tehtävä nappihippa -->
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä nappihappa (luento 8)</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+    <div style="display: flex; align-items: center; justify-content: center; height: 100vh;">
+        <div id="main" style="background-color: yellow; display: flex; flex-direction: column; border: 10px solid yellow; border-radius: 10px; align-items: center;">
+            <h1>Tehtävä nappihippa (luento 8)</h1>
+            <button id="luo">Luo</button>
+        </div>
+    </div>
+    <script>
+        const main = document.getElementById("main");
+        const luo = document.getElementById("luo");
+        
+        luo.addEventListener("click", function (e) {
+            const tuhoa = document.createElement("button");
+            tuhoa.id = "tuhoa";
+            tuhoa.textContent = "Tuhoa";
+            tuhoa.onclick = function () {
+                main.removeChild(tuhoa);
+            }
+            main.appendChild(tuhoa);
+        });
+
+    </script>
+</body>
+</html>
