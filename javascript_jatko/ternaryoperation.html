@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tehtävä B (luento 9)</title>
+</head>
+<body>
+    <style>
+        body {
+            background-color: gray;
+        }
+    </style>
+    <div style="display: flex; align-items: center; justify-content: center; height: 100vh;">
+        <div style="background-color: yellow; display: flex; flex-direction: column; border: 10px solid yellow; border-radius: 10px; align-items: center;">
+            <h1>Tehtävä B (luento 9)</h1>
+            <button>Kirjoita ikä</button>
+            <p></p>
+            <p></p>
+        </div>
+    </div>
+    <script>
+        const btn = document.querySelector("button");
+        const p = document.querySelectorAll("p")[0];
+        const p2 = document.querySelectorAll("p")[1];
+
+        btn.addEventListener("click", function () {
+            const age = prompt("Anna ikäsi");
+            let text;
+            text = age<18 ? "Olet alaikäinen" : "Olet täysi-ikäinen";
+            console.log(text);
+            p.innerHTML = text;
+            text2 = age<0 ? "Ikä ei mahdollinen"
+                : age < 2 ? "Olet taapero"
+                : age < 10 ? "Olet lapsi"
+            : age < 20 ? "Olet nuori"
+            : age < 70 ? "Olet aikuinen"
+            :  "Olet vanhus";
+            console.log(text2);
+            p2.innerHTML = text2;
+        });
+
+    </script>
+</body>
+</html>
